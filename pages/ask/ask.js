@@ -139,7 +139,6 @@ Page({
 							name: 'img',
 							attrs: {
 								class: 'xing-img',
-								style: 'width: 100%',
 								src: tempFilePath,
 								_height: res.height / res.width,
 							},
@@ -347,6 +346,8 @@ Page({
 		wx.showLoading({
 			title: '正在加载...',
 		})
+		this.writeTextToNode();
+		this.handleOutput();
 		var description
 		// 确定描述是什么
 		if (this.data.outputType.toLowerCase() === 'array') {
@@ -355,8 +356,7 @@ Page({
 		if (this.data.outputType.toLowerCase() === 'html') {
 			description = that.nodeListToHTML()
 		}
-		this.writeTextToNode();
-		this.handleOutput();
+
 		var questionContent = {
 			title: that.data.questionTitle,
 			description: description

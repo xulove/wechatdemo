@@ -16,18 +16,14 @@ Page({
     },
     onLoad: function() {
 		var that = this
-		wx.getStorage({
-			key: 'questionContent',
-			success: function(res) {
-				console.log(res)
-				that.setData({
-					questionTitle:res.data.title,
-					questionHTML: res.data.description
-				})
-			},
+		var res = wx.getStorageSync("questionContent")
+		console.log(res)
+		that.setData({
+			questionTitle: res.title,
+			questionHTML: res.description
 		})
-        console.log('onLoad')
-        var that = this
+		
+		WxParse.wxParse('article', 'html', res.description, that, 5);
         //调用应用实例的方法获取全局数据
         app.getUserInfo(function(userInfo) {
             //更新数据
