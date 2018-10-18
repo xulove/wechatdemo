@@ -1,6 +1,6 @@
 //answer.js
 var util = require('../../utils/util.js')
-
+var WxParse = require('../../wxParse/wxParse.js');
 var app = getApp()
 Page({
     data: {
@@ -21,7 +21,8 @@ Page({
 			success: function(res) {
 				console.log(res)
 				that.setData({
-					questionTitle:res.data.title
+					questionTitle:res.data.title,
+					questionHTML: res.data.description
 				})
 			},
 		})

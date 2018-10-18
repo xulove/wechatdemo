@@ -13,7 +13,7 @@
                 {{questionTitle}}
             </view>
             <view class="que-content">
-                WEB前端*不靠谱天气预报员*想做代码小仙女，即发生劳动纠纷机发电开始房间爱打瞌睡附近可拉到积分卡上的纠纷
+				<rich-text nodes="{{questionHTML}}"></rich-text>
             </view>
             <view class="que-follow">
                 <view class="left">

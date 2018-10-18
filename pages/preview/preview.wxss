@@ -1,5 +1,5 @@
 /**answer.wxss**/
-
+@import "/wxParse/wxParse.wxss";
 .answer-feed {
     padding: 0;
     font-size: 14rpx;
