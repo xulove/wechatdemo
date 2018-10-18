@@ -1,0 +1,7 @@
+{
+	"navigationBarTitleText": "提问",
+	"enablePullDownRefresh": false,
+	"usingComponents": {
+		"ask-editor": "/askeditor/xing-editor"
+	}
+}
