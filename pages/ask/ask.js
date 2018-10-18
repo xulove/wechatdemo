@@ -341,4 +341,39 @@ Page({
 		s = s.replace(/\n/g, "<br>");
 		return s;
 	},
+	// 点击预览事件
+	onPreview: function (e) {
+		var that = this;
+		wx.showLoading({
+			title: '正在加载...',
+		})
+		var description
+		// 确定描述是什么
+		if (this.data.outputType.toLowerCase() === 'array') {
+			description = that.data.nodeList
+		}
+		if (this.data.outputType.toLowerCase() === 'html') {
+			description = that.nodeListToHTML()
+		}
+		this.writeTextToNode();
+		this.handleOutput();
+		var questionContent = {
+			title: that.data.questionTitle,
+			description: description
+		};
+		wx.setStorage({
+			key: "questionContent",
+			data: questionContent
+		})
+		wx.hideLoading()
+		wx.navigateTo({
+			url: '../preview/preview'
+		})
+	},
+	// 标题输入框输入事件
+	onTitleInput: function (e) {
+		this.setData({
+			questionTitle: e.detail.value
+		})
+	}
 })

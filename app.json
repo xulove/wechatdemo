@@ -5,7 +5,8 @@
     "pages/more/more",
     "pages/answer/answer",
     "pages/question/question",
-    "pages/ask/ask"
+    "pages/ask/ask",
+	"pages/preview/preview"
   ],
   "window": {
     "backgroundColor": "#FFF",

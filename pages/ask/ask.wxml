@@ -1,7 +1,7 @@
 <!--components/xing-editor.wxml-->
 <view class="askpage" style="min-height: {{windowHeight}}px" scroll-y enable-back-to-top>
 	<view class='header'>
-		<input class="question-title" id='question-title' auto-focus placeholder="简要输入问题的标题" />
+		<input class="question-title" id='question-title' bindinput='onTitleInput' auto-focus placeholder="简要输入问题的标题" />
 	</view>
 	<!-- 标题end -->
     <view class="editor-add-wrapper">
