@@ -10,7 +10,6 @@
 .que-operate{
     width: 750rpx;
     border-top: solid 1px #ebebeb;
-    border-bottom: solid 1px #ebebeb;
     color: #889091;
     vertical-align: middle;
 

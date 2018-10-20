@@ -8,7 +8,7 @@
         <template is="wxParse" data="{{wxParseData:article.nodes}}" />
     </view>
     <view class="que-operate flex-wrp" style='padding-bottom:30px;margin-top:30px;'>
-        <view class="rewrite flex-item">
+        <view class="rewrite flex-item" bindtap='onrewrite'>
             <image src="../../images/write.png"></image>
             <text>修改</text>
         </view>

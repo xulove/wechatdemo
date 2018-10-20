@@ -34,5 +34,10 @@ Page({
     },
     tapName: function(event) {
         console.log(event)
-    }
+    },
+	onrewrite:function(e){
+		wx.navigateBack({
+			delta:1
+		})
+	}
 })

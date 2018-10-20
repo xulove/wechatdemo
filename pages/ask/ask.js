@@ -52,54 +52,7 @@ Page({
 		}
 	},
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-	onReady: function () {
 
-	},
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-	onShow: function () {
-
-	},
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-	onHide: function () {
-
-	},
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-	onUnload: function () {
-
-	},
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-	onPullDownRefresh: function () {
-
-	},
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-	onReachBottom: function () {
-
-	},
-
-    /**
-     * 用户点击右上角分享
-     */
-	onShareAppMessage: function () {
-
-	},
 	addText: function (e) {
 		this.writeTextToNode();
 		const index = e.currentTarget.dataset.index;
@@ -132,6 +85,18 @@ Page({
 		wx.chooseImage({
 			success: res => {
 				const tempFilePath = res.tempFilePaths[0];
+				//上传图片，用返回的图片路劲替换展示的图片路劲
+				wx.uploadFile({
+					url: 'http://localhost:3009/uploadimage',
+					filePath: tempFilePath,
+					name: "image",
+					success:function(res){
+						console.log(res.data)
+						var data = JSON.parse(res.data)
+
+						console.log(data.TempImageUri)
+					}
+				})
 				wx.getImageInfo({
 					src: tempFilePath,
 					success: res => {
