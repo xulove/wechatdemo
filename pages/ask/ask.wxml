@@ -28,16 +28,13 @@
   <view style='width:700rpx;margin:0px auto;'>
     <p style="font-size:15px;color:#c0c4cc">请设置问题的奖励红包</p>
   </view>
-  <view class='rewardsession' style='width:700rpx;margin:0px auto;'>
-    <view class='bottonview'>
-      <button class="mini-btn" type="primary" plain="true" size="mini">2元</button>
-      <button class="mini-btn" type="primary" plain="true" size="mini">5元</button>
-      <button class="mini-btn" type="primary" size="mini">10元</button>
-    </view>
-    <view style='width:20px;'></view>
-    <view class='inputview'>
-      <input placeholder='自定义' type="digit" maxlength='4' style='width:70px;font-size:14px;border-bottom:1px solid #c0c4cc' />
-      <text style='color:#c4c0cc'>元</text>
+  <!-- 金额列表 -->
+  <view class="price-list">
+    <view class="item" wx:for="{{prices}}" wx:key="item" data-item="{{item}}" bindtap="selectItem">
+      <view class="price-box {{selected==item?'active':''}}">
+        <em>
+          <text class="price">{{item}}</text> 元</em>
+      </view>
     </view>
   </view>
 

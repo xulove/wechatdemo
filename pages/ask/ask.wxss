@@ -104,24 +104,47 @@ input.question-title {
   display: block;
   width: 700rpx;
 }
-/* 红包开始 */
-.rewardsession{
-	display: flex;
-	width: 700rpx;
-	margin: 0xp auto;
+
+/* 付款金额样式 */
+.price-list {
+  padding: 0 15rpx;
+  text-align: center;
+  flex-direction: row;
+  height: 250rpx;
 }
-.rewardsession .bottonview{
-	display: flex;
-	flex: 4;
+
+.price-list .item {
+  float: left;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+  margin-bottom: 20rpx;
+  width: 220rpx;
 }
-.rewardsession .bottonview button{
-	padding: 0 1em;
+
+.price-list .price-box {
+  width: 100%;
+  height: 100rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #d55a4a;
+  text-align: center;
 }
-.rewardsession .inputview{
-	display: flex;
-	flex: 2;
+
+.price-list .price-box em {
+  line-height: 100rpx;
+  color: #d55a4a;
+  font-size: 30rpx;
 }
-.rewardsession .inputview input{
-	line-height: 2.3;
-	font-size:13px;
-} 
+
+.price-list .price-box .price {
+  font-size: 50rpx;
+  display: inline-block;
+}
+
+.price-list .price-box.active {
+  background-color: #d55a4a;
+}
+
+.price-list .price-box.active em {
+  color: #fff;
+  background-color: #d55a4a;
+}

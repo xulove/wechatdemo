@@ -11,6 +11,10 @@ Page({
 		outputType: 'html',
 		buttonBackgroundColor: '#409EFF',
 		buttonTextColor: '#fff',
+    prices: [
+      1, 5, 18, 48, 98, 188
+    ],
+    rewardPrice:0
 	},
 
     /**
@@ -340,5 +344,14 @@ Page({
 		this.setData({
 			questionTitle: e.detail.value
 		})
-	}
+	},
+  /**
+   * 选中赞赏金额
+   */
+  selectItem: function (event) {
+    var total = event.currentTarget.dataset.item;
+    console.log(total)
+    var that = this;
+    that.setData({ selected: total });
+  }
 })
