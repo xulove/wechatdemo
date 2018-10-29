@@ -10,23 +10,13 @@
 	<view>
 		<text>我的问题</text>
 	</view> -->
-	<!-- <icon type="success" size="50" class="post" bindtap="bindQueTap"/> -->
+   <button type='primary' bindtap='bingLogin'>登录</button>
 	<view class="question-add">
 		<button type="primary" bindtap='bindQueTap' >提问</button>
+   
 	</view>
     <scroll-view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
         <view class="ctnt0">
-            <!-- 图片展示区域 begin ：暂时先去掉 -->
-            <!-- <swiper class="activity" indicator-dots="{{indicatorDots}}"
-            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{imgUrls}}">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image" width="355" height="155"/>
-        </swiper-item>
-      </block>
-    </swiper> -->
-            <!-- 图片展示区域 end -->
-
             <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
                 <view class="feed-item">
                     <view class="feed-source">

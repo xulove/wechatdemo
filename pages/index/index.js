@@ -1,5 +1,6 @@
 //discovery.js
 var util = require('../../utils/util.js')
+var app = getApp()
 Page({
   data: {
     imgUrls: [
@@ -78,5 +79,32 @@ Page({
       feed: this.data.feed.concat(next_data),
       feed_length: this.data.feed_length + next_data.length
     });
+  },
+  //测试登录
+  bingLogin:function(e){
+    console.log("click login")
+    wx.login({
+      success(res) {
+        console.log(res)
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: app.globalData.requestUrl + '/onlogin',
+            data: {code:res.code},
+            dataType:"json",
+            header: {},
+            method: 'GET',
+            success: function(res) {
+              console.log(res)
+            },
+            fail: function(res) {
+              console.log(res)
+            },
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
   }
 });
